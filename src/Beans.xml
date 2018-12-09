@@ -15,4 +15,6 @@
    <bean id = "beanLifeCycle" class = "us.inest.main.sample.HelloSpring" init-method = "init" destroy-method = "destroy">
       <property name = "message" value = "Hello Spring!"/>
    </bean>
+   
+   <bean class = "us.inest.main.sample.InitHelloSpring" />
 </beans>
