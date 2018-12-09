@@ -1,20 +1,19 @@
-
 package us.inest.main.sample;
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class Main {
+public class PrototypeScopeTest {
 
 	private static ApplicationContext context;
 
 	public static void main(String[] args) {
+		
 		context = new ClassPathXmlApplicationContext("Beans.xml");
-		HelloSpring objA = (HelloSpring) context.getBean("helloSpring");
+		PrototypeScope objA = (PrototypeScope) context.getBean("prototypeScope");
 		objA.setMessage("I'm object A");
 		objA.getMessage();
 		
-		HelloSpring objB = (HelloSpring) context.getBean("helloSpring");
-		objB.getMessage(); //output => I'm object A :  because we configured this bean's scope as singleton
+		PrototypeScope objB = (PrototypeScope) context.getBean("prototypeScope");
+		objB.getMessage(); //Hello Prototype!
 	}
 }
